@@ -11,7 +11,6 @@ f.write("usage point,occurred,value\n")
 for child in root.findall('.//{http://www.w3.org/2005/Atom}content'):
     usage_point = child[0].tag
     if child.findall(".//{http://naesb.org/espi}start") or child.findall(".//{http://naesb.org/espi}value"):
-        print(usage_point)
         f.write(usage_point + ",None,None\n")
         for item in child[0]:
             usage_point = item.tag
